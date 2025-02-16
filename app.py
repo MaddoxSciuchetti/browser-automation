@@ -2,9 +2,10 @@ from langchain_openai import ChatOpenAI
 from browser_use import Agent
 import asyncio
 import os
+from dotenv import load_dotenv
 
-# Hardcode OpenAI API key
-os.environ["OPENAI_API_KEY"] = "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"
+# Load environment variables from .env file
+load_dotenv()
 
 async def main():
     # Create the agent with GPT-4 Vision
@@ -14,7 +15,6 @@ async def main():
         """,
         llm=ChatOpenAI(
             model="gpt-4o",
-            api_key="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",
             max_tokens=4096
         )
     )
@@ -29,7 +29,7 @@ async def main():
 
 if __name__ == "__main__":
     # Make sure you have the latest versions
-    os.system("pip install --upgrade browser-use langchain-openai")
+    os.system("pip install --upgrade browser-use langchain-openai python-dotenv")
     
     # Run the main function
     asyncio.run(main())
