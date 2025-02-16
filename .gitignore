@@ -1,0 +1,7 @@
+venv/
+__pycache__/
+*.pyc
+.env
+agent_history.gif
+.pytest_cache/
+.vscode/
